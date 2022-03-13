@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+// import reactDom from 'react-dom';
+import Modal from './components/Modal';
+import Backdrop from './components/Backdrop';
 
 function App() {
+
+  const [isModalShown, setIsModalShown] = useState(false);
+
+  const closeModalHandler = () => {
+    setIsModalShown(false);
+  }
+
+  const showModalHandler = () => {
+    setIsModalShown(true);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      {isModalShown && <Backdrop onCloseModal={closeModalHandler} />}
+      <Modal show={isModalShown} onCloseModal={closeModalHandler} />
+      <button onClick={showModalHandler}>Show modal</button>
+    </React.Fragment>
   );
 }
 

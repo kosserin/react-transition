@@ -1,0 +1,62 @@
+.modal {
+  width: 700px;
+  max-width: 90vw;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  border-radius: 3px;
+}
+
+.modal h1 {
+  font-size: 1.25rem;
+}
+
+.modal p {
+  margin: 10px 0;
+}
+
+.modal button {
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100px;
+  height: 2.2rem;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.ModalOpen {
+  animation: openModal 0.4s ease-out forwards;
+}
+
+.ModalClosed {
+  animation: closeModal 0.1s ease-out forwards;
+}
+
+@keyframes openModal {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes closeModal {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
